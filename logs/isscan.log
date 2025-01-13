@@ -1,0 +1,6 @@
+{"level":"info","time":"2025-01-13T10:28:14.759+0800","caller":"go-scan/main.go:50","msg":"Server starting","host":"0.0.0.0","port":8888}
+{"level":"info","time":"2025-01-13T10:28:30.691+0800","caller":"middleware/middleware.go:40","msg":"Request completed","path":"/api/port/scan","status":200,"latency":0.227880054}
+{"level":"info","time":"2025-01-13T10:28:37.337+0800","caller":"middleware/middleware.go:40","msg":"Request completed","path":"/api/port/scan","status":200,"latency":0.042574827}
+{"level":"info","time":"2025-01-13T10:28:45.389+0800","caller":"middleware/middleware.go:40","msg":"Request completed","path":"/api/ping","status":200,"latency":2.152473164}
+{"level":"info","time":"2025-01-13T10:28:49.322+0800","caller":"middleware/middleware.go:40","msg":"Request completed","path":"/api/websocket/check","status":200,"latency":0.16643166}
+{"level":"info","time":"2025-01-13T11:52:29.611+0800","caller":"go-scan/main.go:65","msg":"Shutting down gracefully..."}

@@ -1,0 +1,49 @@
+# 服务配置
+server:
+  port: 8888
+  host: "0.0.0.0"
+
+# 日志配置
+log:
+  level: "info"              # 日志级别: debug, info, warn, error
+  path: "./logs"
+  filename: "isscan.log"
+  errorFilename: "error.log"
+  console: true             # 是否输出到控制台
+  maxAge: 7                # 日志保留天数
+  maxSize: 100            # 日志轮转大小（MB）
+  compress: true          # 是否压缩
+
+# SSL证书检查配置
+ssl:
+  checkInterval: "24h"     # 证书检查间隔
+  expiryWarning: "720h"    # 证书过期预警时间 (30天 = 30 * 24小时)
+  timeout: "10s"          # 检查超时时间
+  concurrent: 10          # 并发检查数
+
+# 端口扫描配置  
+scanner:
+  timeout: "5s"           # 扫描超时时间
+  concurrent: 100         # 并发扫描数
+  defaultPorts: [80, 443, 22, 453]
+
+# WebSocket配置
+websocket:
+  pingInterval: "30s"     # 心跳间隔
+  timeout: "10s"          # 连接超时时间
+  retryTimes: 3          # 重试次数
+
+proxy:
+  enable: false
+  type: "http"    # 可选值: http, https, socks5
+  url: ""
+  username: ""
+  password: ""
+  timeout: 5s
+
+dns:
+  type: "doh"
+  servers:
+    - "https://cloudflare-dns.com/dns-query"
+    - "https://dns.google/dns-query"
+  timeout: "5s"
