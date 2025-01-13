@@ -19,6 +19,12 @@ import (
 	"go.uber.org/zap"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 func main() {
 	configPath := flag.String("config", "config.yaml", "path to config file")
 	flag.Parse()
@@ -50,6 +56,13 @@ func main() {
 	logger.Info("Server starting",
 		zap.String("host", config.GlobalConfig.Server.Host),
 		zap.Int("port", config.GlobalConfig.Server.Port),
+	)
+
+	// 添加版本信息日志
+	logger.Info("Starting isscan",
+		zap.String("version", version),
+		zap.String("commit", commit),
+		zap.String("build_date", date),
 	)
 
 	// 创建根context，不设置超时
